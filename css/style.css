@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+article {
+    padding: 4px;
+}
+
+body {
+    align-items: center;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #e1b516;
+    border: 3px inset #eee;
+    border-radius: 1vh;
+    color: black;
+    padding: 5vh;
+    margin: 10vh;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1,
+p,
+h2,
+h3 {
+    font-family: 'Patrick Hand';
+}
+
+p {
+    font-size: x-large;
+}
+
+input {
+    background-color: white;
+    border: 0px;
+    border-radius: 1vh;
+    color: black;
+    padding: 5px;
+    width: 50vh;
+}
+
+input:hover {
+    background-color: #eee;
+}
+
+input:focus {
+    background-color: white;
+}
+
+input,
+button {
+    font-family: 'Roboto';
+}
+
+button {
+    background-color: black;
+    border-radius: 1vh;
+    color: white;
+    cursor: pointer;
+    font-size: large;
+    padding: 5px;
+}
+
+button:hover {
+    background-color: #111;
+}
+
+img {
+    width: 45vh;
+}
+
+#release-date {
+    font-size: 125%;
+}
+
+#movie-description {
+    font-size: 100%;
+    margin: 0 10vh;
+}
+
+#movie-details,
+#movie-genres {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1vh;
+}
+
+#movie-genres p {
+    background-color: #ffdc18;
+    border: 1px solid black;
+    border-radius: 1vh;
+    font-size: 75%;
+    margin: 0 1vh;
+    padding: 0.5vh 1vh;
+}
+
+.patrick-hand-regular {
+    font-family: "Patrick Hand", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
