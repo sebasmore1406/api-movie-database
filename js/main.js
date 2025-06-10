@@ -13,7 +13,7 @@ const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 
 
 function searchMovie() {
     html.movieInfo.innerHTML = '';
-    const query = html.input.value.replaceAll(' ', '+');
+    const query = html.input.value.trim().toLowerCase().replaceAll(' ', '+');
     const url = `https://api.themoviedb.org/3/search/movie?query=${query}`
     console.log(url);
     fetch(url, options)
