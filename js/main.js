@@ -15,31 +15,28 @@ function searchMovie() {
     html.movieInfo.innerHTML = '';
     const query = html.input.value.trim().toLowerCase().replaceAll(' ', '+');
     const url = `https://api.themoviedb.org/3/search/movie?query=${query}`
-    console.log(url);
     fetch(url, options)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Película no encontrada.')
-            } else {
-                return response.json()
             }
+            if (html.input.value.trim().length === 0) {
+                throw new Error("Ingresa el nombre de una película.");
+            }
+            return response.json()
         })
         .then(data => {
-            console.log(data.total_results);
             if (data.total_results === 0) {
                 throw new Error('No se encontraron películas con ese nombre.')
             }
             const urlResult = `https://api.themoviedb.org/3/movie/${data.results[0].id}?language=es-MX`;
-            console.log(urlResult);
             fetch(urlResult, options)
                 .then(response => {
                     return response.json()
                 })
                 .then(data => {
-                    console.log(data);
                     let genres = [];
                     for (let index = 0; index < data.genres.length; index++) {
-                        console.log(data.genres[index].name);
                         genres.push(data.genres[index].name);
                     }
                     let releaseDate = data.release_date.split('-');
